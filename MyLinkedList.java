@@ -152,6 +152,7 @@ public class MyLinkedList<E> implements MyReverseList<E>{
         return element;	
     }
 
+
     /** A method that returns the node at a specified index,
      *  not the content
      *  @param index - position to return the node
@@ -172,5 +173,5 @@ public class MyLinkedList<E> implements MyReverseList<E>{
         //return the node	
         return currNode; 
     }
-    
+
 }

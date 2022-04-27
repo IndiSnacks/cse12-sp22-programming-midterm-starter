@@ -11,7 +11,6 @@
  */
 public class MyArrayList<E> implements MyReverseList<E> {
     static final int DEFAULT_CAPACITY = 5;
-    static final String ILLEGAL_CAPACITY_FMT = "Illegal Capacity: %d";
     
     Object[] data;
     int size;
@@ -33,8 +32,8 @@ public class MyArrayList<E> implements MyReverseList<E> {
     }
 
     /**
-     * TODO: Method header comment here
-     */
+	 * TODO: Method header comment here
+	 */
     public void reverseRegion(int fromIndex, int toIndex){
        /**
         * TODO: Add your solution here
@@ -61,5 +60,4 @@ public class MyArrayList<E> implements MyReverseList<E> {
     public E get(int index) {
         return (E) data[index];
     }
-    
 }

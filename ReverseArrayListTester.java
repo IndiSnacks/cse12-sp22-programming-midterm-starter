@@ -1,6 +1,6 @@
 /**
  * Tests to check the implementation of reverseRegion method in MyArrayList.java
- */
+*/
 
 //other import statements
 
@@ -22,13 +22,12 @@ public class ReverseArrayListTester {
 
 
     /**
-     * Tests reverseRegion method when
-     * fromIndex and toIndex are out of bounds
+     * Tests reverseRegion method when either fromIndex or toIndex
+     * or both are out of bounds.
      */
     @Test
     public void testReverseIndexOutOfBounds(){
         //TODO: Add your test case
-    
     }
 
     /**
@@ -38,7 +37,7 @@ public class ReverseArrayListTester {
     @Test
     public void testReverseFromIndexGreater(){
         //TODO: Add your test case
-    
+
     }
 
     /**
@@ -47,8 +46,8 @@ public class ReverseArrayListTester {
     */
     @Test
     public void testReverseIndexWithinBounds(){
+
         //TODO: Add your test case
-    
     }
 
     /**
@@ -59,5 +58,6 @@ public class ReverseArrayListTester {
         //TODO: Add your test case
 
     }
+
 
 }

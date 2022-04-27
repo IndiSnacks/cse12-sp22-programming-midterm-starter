@@ -42,7 +42,10 @@ public class ReverseArrayListTester {
 
     /**
      * Tests reverseRegion method when
-     * fromIndex and toIndex are within bounds
+     * fromIndex and toIndex are within bounds and
+     * in the middle of the list 
+     * (i.e. fromIndex > 0 and toIndex < size-1), 
+     * and fromIndex is less than toIndex.
     */
     @Test
     public void testReverseIndexWithinBounds(){

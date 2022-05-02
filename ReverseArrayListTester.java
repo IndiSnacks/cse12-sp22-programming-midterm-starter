@@ -4,6 +4,10 @@
 
 //other import statements
 
+import static org.junit.Assert.assertArrayEquals;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
+
 import org.junit.*;
 
 //IMPORTANT: DO NOT MODIFY THE TEST HEADERS!
@@ -12,12 +16,15 @@ import org.junit.*;
  */
 public class ReverseArrayListTester {
 
+    private MyArrayList<Object> intArrayList;
+
+    Integer[] intArry = {1,2,3,4,5,6};
     /**
      * Run before every test
      */
     @Before
     public void setUp(){
-
+        intArrayList = new MyArrayList<>(intArry);
     }
 
 
@@ -27,7 +34,22 @@ public class ReverseArrayListTester {
      */
     @Test
     public void testReverseIndexOutOfBounds(){
-        //TODO: Add your test case
+        boolean error = false;
+        try{
+            intArrayList.reverseRegion(0, 8);
+        }catch(IndexOutOfBoundsException bad){
+            error = true;
+        }
+        assertTrue("ToIndex out of bounds",error);
+
+        boolean error2 = false;
+        try{
+            intArrayList.reverseRegion(-1, 2);
+        }catch(IndexOutOfBoundsException bad){
+            error2 = true;
+        }
+        assertTrue("fromIndex out of bounds",error2);
+
     }
 
     /**
@@ -36,8 +58,13 @@ public class ReverseArrayListTester {
      */
     @Test
     public void testReverseFromIndexGreater(){
-        //TODO: Add your test case
-
+        boolean error = false;
+        try{
+            intArrayList.reverseRegion(3, 1);
+        }catch(IndexOutOfBoundsException bad){
+            error = true;
+        }
+        assertTrue("FromIndex > ToIndex Index",error);
     }
 
     /**
@@ -49,16 +76,19 @@ public class ReverseArrayListTester {
     */
     @Test
     public void testReverseIndexWithinBounds(){
-
-        //TODO: Add your test case
+        intArrayList.reverseRegion(1, 3);
+        Object[] expected = {1,4,3,2,5,6};
+        assertArrayEquals(expected, intArrayList.data);
     }
 
     /**
-     * Custom test
+     * reversing a arrylist fome one bound to another
     */
     @Test
     public void testReverseCustom(){
-        //TODO: Add your test case
+        intArrayList.reverseRegion(0, 5);
+        Object[] expObjects = {6,5,4,3,2,1};
+        assertArrayEquals(expObjects, intArrayList.data);
 
     }
 

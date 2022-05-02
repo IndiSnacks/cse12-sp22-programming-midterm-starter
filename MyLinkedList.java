@@ -1,9 +1,12 @@
+import java.util.Set;
+
+import javax.lang.model.element.Element;
+
 /**
- * TODO: Add your file header
- * Name:
- * ID:
- * Email:
- * File description: 
+ * Name: Sahil Gathe
+ * ID: A16840774
+ * Email: sgathe@ucsd.edu   
+ * File description: This file implments the linked list
  */
 
 /**
@@ -123,7 +126,26 @@ public class MyLinkedList<E> implements MyReverseList<E>{
      * TODO: Method header comment here
      */
     public void reverseRegion(int fromIndex, int toIndex){
-        //TODO: Add your solution here
+        if(fromIndex < 0 || toIndex == 0 || toIndex > size || fromIndex > toIndex){
+            throw new IndexOutOfBoundsException("Linked List reverseRegion index");
+        }
+
+        //create a temp array that is reversed
+        Object[] tempArray = new Object[toIndex - fromIndex + 1];
+        int tempItter = 0;
+        for(int i = toIndex; i > fromIndex - 1; i--){
+            tempArray[tempItter] = this.get(i);
+            tempItter++;
+        }
+
+        //replace the orginal arraylist with the temp
+        int tempItter2 = 0;
+        for(int i = fromIndex; i < toIndex + 1; i++){
+             Node node = getNth(i);
+             E elem = (E) tempArray[tempItter2];
+             node.setElement(elem);
+             tempItter2++;
+        }
     }
 
     @Override
